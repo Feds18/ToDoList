@@ -1,0 +1,347 @@
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+/*===== VARIABLES CSS =====*/
+:root {
+  --nav-width: 92px;
+
+  /*===== Colors =====*/
+  --first-color: #f42f0c;
+  --bg-color: #1d1d1d;
+  --sub-color: #B6CEFC;
+  --white-color: #FFF;
+
+  /*===== Fonts =====*/
+  --body-font: 'Poppins', sans-serif;
+  --normal-font-size: 1rem;
+  --small-font-size: .875rem;
+
+  /*===== z index =====*/
+  --z-fixed: 100;
+}
+
+
+/*===== BASE =====*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(45, 45, 45);
+  position: relative;
+  margin: 0;
+  padding: 2rem 0 0 6.75rem;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  transition: .5s;
+}
+
+h1 {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*===== l NAV =====*/
+.l-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--nav-width);
+  height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--white-color);
+  padding: 1.5rem 1.5rem 2rem;
+  transition: .5s;
+  z-index: var(--z-fixed);
+}
+
+/*===== NAV =====*/
+.nav {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.nav__brand {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.nav__toggle {
+  font-size: 1.25rem;
+  padding: .75rem;
+  cursor: pointer;
+}
+
+.nav__logo {
+  color: var(--white-color);
+  font-weight: 600;
+}
+
+.nav__link {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  align-items: center;
+  column-gap: .75rem;
+  padding: .75rem;
+  color: var(--white-color);
+  border-radius: .5rem;
+  margin-bottom: 1rem;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.nav__link:hover {
+  background-color: var(--first-color);
+}
+
+.nav__icon {
+  font-size: 1.25rem;
+}
+
+.nav__name {
+  font-size: var(--small-font-size);
+}
+
+/*Expander menu*/
+.expander {
+  width: calc(var(--nav-width) + 9.25rem);
+}
+
+/*Add padding body*/
+.body-pd {
+  padding: 2rem 0 0 16rem;
+}
+
+/*Active links menu*/
+.active {
+  background-color: var(--first-color);
+}
+
+/*===== Create Project Style =====*/
+/* Elementi del modulo aggiungi progetto */
+.add-project {
+  display: flex;
+  flex-direction: column;
+  /* Imposta la direzione del layout su riga */
+  align-items: center;
+  /* Centra gli elementi lungo l'asse trasversale */
+  gap: 8px;
+  /* Aggiunge uno spazio tra i pulsanti */
+}
+
+
+/* Stile per i pulsanti Annulla e Salva */
+.add-project button {
+  border: none;
+  padding: 12px 24px;
+  /* Aumenta il padding per rendere i pulsanti più grandi */
+  border-radius: 8px;
+  /* background-color: #f0f0f0; Cambia il colore di sfondo */
+  font-size: 16px;
+  /* Aumenta la dimensione del testo */
+  line-height: 1;
+  /* Imposta l'altezza della riga per centrare il testo verticalmente */
+}
+
+/*stile per i pulsanti salva e annulla di projects*/
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: right;
+  margin-right: 26px;
+}
+
+/*colori di sfondo e dei caratteri di default*/
+.saveButton {
+  background-color: rgb(76, 40, 39);
+  color: rgb(110, 100, 100);
+}
+
+.undoButton {
+  background-color: rgb(61, 61, 61);
+  color: white;
+}
+
+.project {
+  margin: 0 auto;
+  margin-top: 100px;
+  max-width: 300px;
+  padding: 0px 10px;
+}
+
+.projectNameInput {
+  flex-grow: 1;
+  /* Per far espandere l'input per riempire lo spazio rimanente */
+  padding: 5px;
+  /* Aggiunge spazio interno all'input */
+  border-radius: 8px 8px 0 0;
+  /* Bordi arrotondati */
+  border: none;
+  border-bottom: solid;
+  border-width: 1px;
+  background-color: rgb(30, 30, 30);
+  color: white;
+  font-size: large;
+  outline: none;
+  /*rimuove l'outline dell'input*/
+}
+
+/*===== Rename Project Style =====*/
+.renameInput {
+  flex-grow: 1;
+  padding: 5px;
+  border-radius: 8px;
+  border: solid;
+  border-width: 1px;
+  background-color: rgb(30, 30, 30);
+  color: white;
+  font-size: large;
+  outline: none;
+  margin-bottom: 16px;
+}
+
+.renameSave {
+  height: 34px;
+  width: 60px;
+  flex-grow: 1;
+  padding: 5px;
+  border-radius: 8px;
+  border: none;
+  background-color: rgb(76, 40, 39);
+  color: rgb(110, 100, 100);
+  font-size: large;
+  outline: none;
+  margin-bottom: 16px;
+}
+
+.renameUndo {
+  height: 34px;
+  width: 70px;
+  flex-grow: 1;
+  padding: 5px;
+  border-radius: 8px;
+  border: none;
+  background-color: rgb(61, 61, 61);
+  color: white;
+  font-size: large;
+  outline: none;
+  margin-bottom: 16px;
+}
+
+
+/* Stile per il pulsante di conferma */
+#submitProjectButton {
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/*===== TODOLIST STYLE =====*/
+/* Utilities */
+.container {
+  margin: 0 auto;
+  max-width: 540px;
+}
+
+#h1 {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+}
+
+/* Pannello */
+.panel {
+  padding: 16px;
+  border-radius: 16px;
+  border: solid;
+  border-width: 1px;
+  border-color: white;
+  background-color: rgb(30, 30, 30);
+}
+
+.headPanel {
+  padding: 16px;
+  border-radius: 16px;
+  border: solid;
+  border-width: 1px;
+  border-color: white;
+  background-color: rgb(30, 30, 30);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+#logo {
+  width: 70px;
+}
+
+/* Elementi del modulo aggiungi attività */
+.add-todo {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+
+#input {
+  font-size: 16px;
+  padding: 16px;
+  border-radius: 8px;
+  border: none;
+  flex-grow: 1;
+}
+
+#add {
+  cursor: pointer;
+  padding: 16px;
+  border: none;
+  border-radius: 16px;
+  background-color: #F42F0C;
+}
+
+/* Messaggio di lista vuota */
+
+.empty-list-message {
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  background-color: rgb(255, 255, 255);
+  margin: 16px 0;
+  border-radius: 16px;
+}
+
+.todo-text {
+  padding: 3px 16px;
+}
+
+.todo-check {
+  cursor: pointer;
+  padding: 16px;
+  border-radius: 16px 0 0 16px;
+  background-color: #F42F0C;
+}

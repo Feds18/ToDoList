@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <title>ToDoList</title>
+
+</head>
+
+<body id="body-pd">
+
+    <div class="l-navbar" id="navbar">
+        <nav class="nav">
+            <div>
+                <div class="nav__brand">
+                    <ion-icon name="menu-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
+                    <a href="#" class="nav__logo">ToDoList</a>
+                </div>
+
+                <a href="#" class="nav__link create_project" id="pr">
+                    <ion-icon name="add" class="nav__icon"></ion-icon>
+                    <span class="nav__name">Crea Progetto</span>
+                </a>
+
+                <div class="nav__link clear">
+                    <ion-icon name="trash-outline" class="nav__icon"></ion-icon>
+                    <span class="nav__name">cancella le attività</span>
+                </div>
+                <div class="nav__link rename">
+                    <ion-icon name="create-outline" class="nav__icon"></ion-icon>
+                    <span class="nav__name">Rinomina Progetto</span>
+                </div>
+            </div>
+    </div>
+    </nav>
+    </div>
+
+    <!-- menù a scomparsa -->
+    <div class="project" style="display: none;">
+        <!-- Pannello aggiunta progetto -->
+        <div class="panel add-project" id="projectInputSection">
+            <input type="text" placeholder="Nome del progetto" class="projectNameInput">
+            <!-- <button id="submitProjectButton">
+                <img src="images/plus.png" alt="plus icon" class="plus-icon">
+            </button> -->
+            <div class="buttons">
+                <button class="undoButton">Annulla</button>
+                <button class="saveButton">Salva</button>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="display: none;">
+        <div class="renamePanel" style="display: none;">
+            <input type="text" placeholder="rinomina il progetto" class="renameInput">
+            <button class="renameUndo">Annulla</button>
+            <button class="renameSave">Salva</button>
+        </div>
+        <!-- Intestazione -->
+        <header class="headPanel">
+            <h1 id="h1"></h1>
+            <img id="logo" src="assets/images/logo.png">
+        </header>
+
+        <!-- Sezione principale -->
+        <main>
+            <!-- MEssaggio da mostrare se non ho attività -->
+            <p class="empty-list-message"></p>
+
+            <!-- Lista attività -->
+            <ul class="todo-list">
+
+            </ul>
+
+            <!-- pannello aggiunta attività -->
+            <div class="panel add-todo">
+                <input type="text" placeholder="Aggiungi attività" id="input">
+                <button id="add">
+                    <ion-icon name="add-circle" class="nav__icon add-icon"></ion-icon>
+                </button>
+            </div>
+
+        </main>
+    </div>
+    <!-- ===== IONICONS ===== -->
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+
+    <!-- ===== MAIN JS ===== -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
